@@ -1,6 +1,7 @@
 #Installation of Environment Prerequisites#
+ip=`ifconfig eth0 | grep 'inet addr' | awk '{print $2}'|cut -d: -f2`
 
-echo "172.31.33.255 puppet" >> /etc/hosts
+echo "$ip puppet" >> /etc/hosts
 
 #Installation of Puppet#
 echo installing puppet master
