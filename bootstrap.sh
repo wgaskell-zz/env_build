@@ -58,10 +58,6 @@ node default {
       restart       => 'true',
     }
 
-    jenkins::plugin {
-      "git" : ;
-    }
-
     mysql::db { 'db1020198':
     user     => '1020198',
     password => 'wayne2013',
@@ -80,5 +76,3 @@ EOF
 
 puppet agent -t
 rm /var/www/html/index.html
-
-
