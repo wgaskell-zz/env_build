@@ -1,5 +1,6 @@
-#Installation of Environment Prerequisities#
+#Installation of Environment Prerequisites#
 
+echo "172.31.33.255 puppet" >> /etc/hosts
 
 #Installation of Puppet#
 echo installing puppet master
@@ -43,3 +44,7 @@ echo GIT installed
 #
 echo updating all packages
 apt-get -y update #Update Packages
+
+rm /var/www/html/index.html
+
+
