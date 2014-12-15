@@ -45,6 +45,40 @@ echo GIT installed
 echo updating all packages
 apt-get -y update #Update Packages
 
+cd /etc/puppet/manifests/
+cat <<EOF >site.pp
+node default {
+    notify {"Helloworld":}
+    package {'apache2':
+      ensure => present,
+    }
+
+    class { 'mysql::server':
+      root_password => '1234qwer',
+      restart       => 'true',
+    }
+
+    jenkins::plugin {
+      "git" : ;
+    }
+
+    mysql::db { 'db1020198':
+    user     => '1020198',
+    password => 'wayne2013',
+    host     => 'localhost',
+    grant    => ['all'],
+    charset => 'utf8',
+    sql      => '/root/data.sql',
+    enforce_sql  => 'true',
+    require => File['/root/.my.cnf'],
+
+    }
+
+}
+
+EOF
+
+puppet agent -t
 rm /var/www/html/index.html
 
 
