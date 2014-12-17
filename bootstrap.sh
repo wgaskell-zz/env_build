@@ -154,12 +154,6 @@ VALUES
         (40,'AlpDuez','Lievre blanks','Red','1.1km');
 
 UNLOCK TABLES;
-
-
-    }
-
-}
-
 EOF
 
 cd /etc/puppet/manifests/
