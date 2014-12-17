@@ -146,6 +146,7 @@ VALUES
 
 UNLOCK TABLES;
 EOF
+chmod 755 /home/ubuntu/data.sql
 
 cd /etc/puppet/manifests/
 cat <<EOF >site.pp
