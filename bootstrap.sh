@@ -134,6 +134,9 @@ UNLOCK TABLES;
 
 EOF
 
+sudo chown ubuntu:ubuntu data.sql
+
+chmod 775 data.sql
 
 cd /etc/puppet/manifests/
 cat <<EOF >site.pp
