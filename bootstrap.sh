@@ -58,7 +58,7 @@ node default {
     host     => 'localhost',
     grant    => ['all'],
     charset => 'utf8',
-    sql      => '/home/ubuntu/env_builddata.sql',
+    sql      => '/home/ubuntu/env_build/data.sql',
     enforce_sql  => 'true',
     require => File['/root/.my.cnf'],
 
