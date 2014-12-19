@@ -42,7 +42,7 @@ apt-get -y update #Update Packages
 cd /home/ubuntu/
 cat <<EOF >data.sql
 -- Host: localhost
--- Generation Time: Dec 15, 2014 at 18:45 PM
+-- Generation Time: Dec 15, 2013 at 05:45 PM
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `active`) VALUES
 (2, 'test', '', 'password', 0),
-(3, 'Wayne', '', 'password', 0),
-(4, 'Gaskell', 'wayne@test.com', 'test', 0);
+(3, 'info', '', 'test', 0),
+(4, 'test1', 'codingcyber@gmail.com', 'test', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
