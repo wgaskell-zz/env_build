@@ -41,8 +41,24 @@ apt-get -y update #Update Packages
 
 cd /home/ubuntu/
 cat <<EOF >data.sql
+-- Host: localhost
+-- Generation Time: Dec 15, 2014 at 18:45 PM
+
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `test`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `user`
@@ -59,19 +75,17 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Adding data for table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `active`) VALUES
 (2, 'test', '', 'password', 0),
-(3, 'wayne', '', 'test', 0),
-(4, 'gaskell', 'gaskell@email.com', 'password', 0);
+(3, 'Wayne', '', 'password', 0),
+(4, 'Gaskell', 'wayne@test.com', 'test', 0);
 
---------------------------------------------------------
-
---
--- Table structure for table `piste`
---
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 DROP TABLE IF EXISTS `piste`;
 
@@ -131,12 +145,11 @@ VALUES
 
 UNLOCK TABLES;
 
-
 EOF
 
 sudo chown ubuntu:ubuntu data.sql
 
-chmod 775 data.sql
+chmod 755 data.sql
 
 cd /etc/puppet/manifests/
 cat <<EOF >site.pp
@@ -162,7 +175,6 @@ node default {
     require => File['/root/.my.cnf'],
 
     }
-
 }
 
 EOF
