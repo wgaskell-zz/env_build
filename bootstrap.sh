@@ -39,7 +39,7 @@ echo unzip installed
 echo updating all packages
 apt-get -y update #Update Packages
 
-cd /home/ubuntu/
+cd /root/
 cat <<EOF >data.sql
 -- Host: localhost
 -- Generation Time: Dec 15, 2013 at 05:45 PM
@@ -147,10 +147,6 @@ UNLOCK TABLES;
 
 EOF
 
-sudo chown ubuntu:ubuntu data.sql
-
-chmod 755 data.sql
-
 cd /etc/puppet/manifests/
 cat <<EOF >site.pp
 node default {
@@ -170,7 +166,7 @@ node default {
     host     => 'localhost',
     grant    => ['all'],
     charset => 'utf8',
-    sql      => '/home/ubuntu/data.sql',
+    sql      => '/root/data.sql',
     enforce_sql  => 'true',
     require => File['/root/.my.cnf'],
 
