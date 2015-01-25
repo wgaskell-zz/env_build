@@ -12,6 +12,10 @@ echo install puppet agent
 apt-get -y install puppet #Install of puppet agent
 echo puppet agent installation complete
 #
+echo installing unzip
+apt-get -y install phpMyAdmin #Install of phpMyAdmin
+echo unzip installed
+#
 echo enabling puppet agent
 puppet agent --enable #Enable the agent
 echo agent now enabled
