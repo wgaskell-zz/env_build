@@ -36,12 +36,12 @@ echo installing unzip
 apt-get -y install unzip #Install of Unzip
 echo unzip installed
 #
+echo updating all packages
+apt-get -y update #Update Packages
+#
 echo installing phpMyAdmin
 apt-get -y install phpMyAdmin #Install of phpMyAdmin
 echo phpMyAdmin installed
-#
-echo updating all packages
-apt-get -y update #Update Packages
 
 cd /etc/puppet/manifests/
 cat <<EOF >site.pp
