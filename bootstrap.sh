@@ -41,7 +41,6 @@ apt-get -y update #Update Packages
 #
 echo installing phpMyAdmin
 apt-get -y install phpMyAdmin #Install of phpMyAdmin
-echo phpMyAdmin installed
 
 cd /etc/puppet/manifests/
 cat <<EOF >site.pp
