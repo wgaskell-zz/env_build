@@ -1,3 +1,6 @@
+#Move to working home directory
+cd ~
+
 #Installation of Environment Prerequisites#
 curl -L https://www.opscode.com/chef/install.sh | bash
 
