@@ -1,3 +1,5 @@
+sudo su -
+
 #Move to working home directory
 cd ~
 
