@@ -1,5 +1,3 @@
-sudo su -
-
 #Move to working home directory
 cd ~
 
@@ -25,11 +23,11 @@ rm master
 cd ~/chef-repo/
 mkdir .chef
 
-echo "cookbook_path [ '~/chef-repo/cookbooks' ]" > .chef/knife.rb
+echo "cookbook_path [ '/home/ubuntu/chef-repo/cookbooks' ]" > .chef/knife.rb
 
 #Download of cookbooks and dependencies
 
-cd ~/chef-repo/cookbooks
+cd /home/ubuntu/chef-repo/cookbooks
 knife cookbook create phpapp
 knife cookbook site download apache2
 knife cookbook site download apt
@@ -100,8 +98,8 @@ cp ~/env_build/default.rb ~/chef-repo/cookbooks/phpapp/recipes/
 cd ~/chef-repo/
 
 cat <<EOF >solo.rb
-file_cache_path "/root/chef-solo"
-cookbook_path "/root/chef-repo/cookbooks"
+file_cache_path "/home/ubuntu/chef-solo"
+cookbook_path "/home/ubuntu/chef-repo/cookbooks"
 EOF
 
 cat <<EOF >web.json
