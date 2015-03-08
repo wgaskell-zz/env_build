@@ -88,4 +88,21 @@ apt-get -y update #Update Packages
 echo installing phpMyAdmin
 apt-get -y install phpMyAdmin #Install of phpMyAdmin
 
+cd /root/chef-repo
+
+cat <<EOF >solo.rb
+file_cache_path "/root/chef-solo"
+cookbook_path "/root/chef-repo/cookbooks"
+EOF
+
+cat <<EOF >web.json
+{
+  "run_list": [ "recipe[apt]", "recipe[phpapp]" ]
+}
+EOF
+
+#Run Chef cookbook
+chef-solo -c solo.rb -j web.json
+
+#Remove default webserver file
 rm /var/www/html/index.html
