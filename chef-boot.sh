@@ -100,8 +100,8 @@ cp ~/env_build/default.rb ~/chef-repo/cookbooks/phpapp/recipes/
 cd ~/chef-repo/
 
 cat <<EOF >solo.rb
-file_cache_path "~/chef-solo"
-cookbook_path "~/chef-repo/cookbooks"
+file_cache_path "/root/chef-solo"
+cookbook_path "/root/chef-repo/cookbooks"
 EOF
 
 cat <<EOF >web.json
