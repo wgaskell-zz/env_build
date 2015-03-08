@@ -17,13 +17,14 @@ mv chef-chef-repo-e3efb8c chef-repo
 rm master
 
 #Change into working directory
-cd chef-repo/
+cd ~/chef-repo/
 mkdir .chef
 
 echo "cookbook_path [ '/root/chef-repo/cookbooks' ]" > .chef/knife.rb
 
 #Download of cookbooks and dependencies
-cd /root/chef-repo/cookbooks
+
+cd ~/chef-repo/cookbooks
 knife cookbook create phpapp
 knife cookbook site download apache2
 knife cookbook site download apt
@@ -88,7 +89,7 @@ apt-get -y update #Update Packages
 echo installing phpMyAdmin
 apt-get -y install phpMyAdmin #Install of phpMyAdmin
 
-cd /root/chef-repo
+cd ~/chef-repo/
 
 cat <<EOF >solo.rb
 file_cache_path "/root/chef-solo"
