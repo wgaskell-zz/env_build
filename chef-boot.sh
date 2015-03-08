@@ -111,7 +111,7 @@ cat <<EOF >web.json
 EOF
 
 #Run Chef cookbook
-chef-solo -c solo.rb -j web.json
+sudo chef-solo -c solo.rb -j web.json
 
 #Populate Database
 cd ~/env_build
