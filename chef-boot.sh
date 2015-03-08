@@ -89,6 +89,9 @@ apt-get -y update #Update Packages
 echo installing phpMyAdmin
 apt-get -y install phpMyAdmin #Install of phpMyAdmin
 
+cp ~/env_build/metadata.rb ~/chef-repo/cookbooks/phpapp/
+cp ~/env_build/default.rb ~/chef-repo/cookbooks/phpapp/recipes/
+
 cd ~/chef-repo/
 
 cat <<EOF >solo.rb
