@@ -29,11 +29,13 @@ echo "cookbook_path [ '/home/ubuntu/chef-repo/cookbooks' ]" > .chef/knife.rb
 
 cd /home/ubuntu/chef-repo/cookbooks
 knife cookbook create phpapp
-knife cookbook site download apache2
-knife cookbook site download apt
-knife cookbook site download iptables
-knife cookbook site download logrotate
-knife cookbook site download pacman
+knife cookbook site download apache2 3.0.1
+knife cookbook site download apt 2.6.1
+knife cookbook site download iptables 0.14.1
+knife cookbook site download database 4.0.3
+knife cookbook site download postgresql 3.4.18
+knife cookbook site download logrotate 1.9.0
+knife cookbook site download pacman 1.1.1
 knife cookbook site download smf 2.2.1
 knife cookbook site download yum-mysql-community 0.1.12
 knife cookbook site download yum 3.5.2
@@ -48,27 +50,11 @@ knife cookbook site download windows 1.36.1
 knife cookbook site download chef_handler 1.1.6
 knife cookbook site download chef-sugar 2.5.0
 knife cookbook site download php-fpm 0.7.0
+knife cookbook site download openssl 4.0.0
 
 #Extraction of cookbooks and dependencies
-tar zxf apache2*
-tar zxf apt-2.6.1.tar.gz
-tar zxf iptables-0.14.1.tar.gz
-tar zxf logrotate-1.8.0.tar.gz
-tar zxf pacman-1.1.1.tar.gz
-tar zxf mysql-5.5.4.tar.gz
-tar zxf smf-2.2.1.tar.gz
-tar zxf yum-3.5.2.tar.gz
-tar zxf yum-mysql-community-0.1.12.tar.gz
-tar zxf phpmyadmin-1.0.6.tar.gz
-tar zxf php-1.5.0.tar.gz
-tar zxf build-essential-2.1.3.tar.gz
-tar zxf iis-2.1.6.tar.gz
-tar zxf xml-1.2.9.tar.gz
-tar zxf yum-epel-0.6.0.tar.gz
-tar zxf windows-1.36.1.tar.gz
-tar zxf chef_handler-1.1.6.tar.gz
-tar zxf chef-sugar-2.5.0.tar.gz
-tar zxf php-fpm-0.7.0.tar.gz
+sudo sh -c 'for i in *.tar.gz; do tar -zxf "$i"; done'
+sleep 5
 
 #Cleanup of cookbooks
 rm *.tar.gz
