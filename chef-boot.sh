@@ -51,6 +51,7 @@ knife cookbook site download chef_handler 1.1.6
 knife cookbook site download chef-sugar 2.5.0
 knife cookbook site download php-fpm 0.7.0
 knife cookbook site download openssl 4.0.0
+knife cookbook site download ruby 0.9.3
 
 #Extraction of cookbooks and dependencies
 sudo sh -c 'for i in *.tar.gz; do tar -zxf "$i"; done'
