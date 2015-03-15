@@ -99,8 +99,8 @@ EOF
 sudo chef-solo -c solo.rb -j web.json
 
 #Populate Database
-cd ~/env_build
-mysql -u 1020198 -p db1020198 --password=wayne2013 < data.sql
+#cd ~/env_build
+#mysql -u 1020198 -p db1020198 --password=wayne2013 < data.sql
 
 #Remove default webserver file
 rm /var/www/html/index.html
